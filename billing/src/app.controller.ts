@@ -12,6 +12,7 @@ export class AppController implements OnModuleDestroy {
     throw new Error('Method not implemented.');
   }
   onModuleInit() {
+    console.log('onModuleInit');
     this.authClient.subscribeToResponseOf('get_user');
   }
 

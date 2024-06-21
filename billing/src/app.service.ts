@@ -16,8 +16,9 @@ export class AppService {
     this.authClient
       .send('get_user', new GetUserRequest(orderCreatedEvent.userId))
       .subscribe((user) => {
+        console.log(user);
         console.log(
-          `Billing user with stripe ID ${user.stripUserId} aprice of ${orderCreatedEvent.price}...`,
+          `Billing user with stripe ID ${user?.stripUserId} aprice of ${orderCreatedEvent.price}...`,
         );
       });
   }
